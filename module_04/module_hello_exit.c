@@ -1,0 +1,9 @@
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+
+static void __exit exit_my_module(void){
+	printk(KERN_INFO "NHUTNAM_DEBUG : GOODBYE, FUCK THIS WORLD \n");
+}
+
+module_exit(exit_my_module);

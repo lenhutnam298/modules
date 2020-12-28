@@ -1,0 +1,1 @@
+cmd_/home/nhutnam/Desktop/modules/module_04/hello_world.o := ld -m elf_i386   -r -o /home/nhutnam/Desktop/modules/module_04/hello_world.o /home/nhutnam/Desktop/modules/module_04/module_hello_init.o /home/nhutnam/Desktop/modules/module_04/module_hello_exit.o 
