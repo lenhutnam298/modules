@@ -19,10 +19,11 @@ void disable_page_writing(void){
 
 } 
 
-asmlinkage int (*original_read)(unsigned int, void __user*, size_t);
-asmlinkage int  HookRead(unsigned int fd, void __user* buf, size_t count) {
-	printk(KERN_INFO "READ HOOKED HERE! -- This is our function!"); 
-	return (*original_read)(fd, buf, count);
+asmlinkage int (*original_open) (int dirfd, const char *pathname, int flags);
+
+asmlinkage int	HookOpen(int dirfd, const char *pathname, int flags){
+	printk(KERN_EMERG "opened ===> %s\n", pathname);
+	return (*original_open)(dirfd, pathname, flags);
 }
 
 
@@ -33,9 +34,9 @@ static int __init init_hook(void) {
 	printk(KERN_INFO "System call table at %p\n", SYS_CALL_TABLE);
 	enable_page_writing();
 
-    	// Replaces Pointer Of Syscall_read on our syscall.
-	original_read = (void*)SYS_CALL_TABLE[__NR_read];
-	SYS_CALL_TABLE[__NR_read] = (unsigned long*)HookRead;
+ 	// Replaces Pointer Of Syscall_open on our syscall.
+	original_open = (void*)SYS_CALL_TABLE[__NR_openat];
+	SYS_CALL_TABLE[__NR_openat] = (unsigned long*)HookOpen;
 	disable_page_writing();
 	return 0;
 }
@@ -44,7 +45,7 @@ static int __init init_hook(void) {
 static void __exit clean_hook(void) {
 	// Clean up our Hooks
 	enable_page_writing();
-	SYS_CALL_TABLE[__NR_read] = (unsigned long*)original_read;
+	SYS_CALL_TABLE[__NR_openat] = (unsigned long*)original_open;
 	disable_page_writing();
 
 	printk(KERN_INFO "Hooks cleaned");

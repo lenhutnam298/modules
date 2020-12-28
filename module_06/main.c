@@ -21,7 +21,7 @@ void disable_page_writing(void){
 
 asmlinkage int (*original_read)(unsigned int, void __user*, size_t);
 asmlinkage int  HookRead(unsigned int fd, void __user* buf, size_t count) {
-	printk(KERN_INFO "READ HOOKED HERE! -- This is our function!"); 
+	printk(KERN_INFO "READ HOOKED HERE!"); 
 	return (*original_read)(fd, buf, count);
 }
 
