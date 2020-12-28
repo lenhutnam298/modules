@@ -1,1 +1,1 @@
-cmd_/home/nhutnam/Desktop/hook/hook.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.13.0-170-generic/scripts/module-common.lds --build-id  -o /home/nhutnam/Desktop/hook/hook.ko /home/nhutnam/Desktop/hook/hook.o /home/nhutnam/Desktop/hook/hook.mod.o
+cmd_/home/nhutnam/Desktop/modules/hook/hook.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.13.0-170-generic/scripts/module-common.lds --build-id  -o /home/nhutnam/Desktop/modules/hook/hook.ko /home/nhutnam/Desktop/modules/hook/hook.o /home/nhutnam/Desktop/modules/hook/hook.mod.o

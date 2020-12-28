@@ -1,2 +1,2 @@
-/home/nhutnam/Desktop/hook/hook.ko
-/home/nhutnam/Desktop/hook/hook_syscalls.o
+/home/nhutnam/Desktop/modules/hook/hook.ko
+/home/nhutnam/Desktop/modules/hook/hook_syscalls.o

@@ -1,8 +1,8 @@
-cmd_/home/nhutnam/Desktop/hook/hook_syscalls.o := gcc -Wp,-MD,/home/nhutnam/Desktop/hook/.hook_syscalls.o.d  -nostdinc -isystem /usr/lib/gcc/i686-linux-gnu/4.8/include  -I/usr/src/linux-headers-3.13.0-170-generic/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/usr/src/linux-headers-3.13.0-170-generic/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/usr/src/linux-headers-3.13.0-170-generic/include/uapi -Iinclude/generated/uapi -include /usr/src/linux-headers-3.13.0-170-generic/include/linux/kconfig.h -Iubuntu/include  -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -std=gnu89 -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mindirect-branch=thunk-extern -mindirect-branch-register -DRETPOLINE -Wframe-larger-than=1024 -fstack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO -std=gnu99  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(hook_syscalls)"  -D"KBUILD_MODNAME=KBUILD_STR(hook)" -c -o /home/nhutnam/Desktop/hook/.tmp_hook_syscalls.o /home/nhutnam/Desktop/hook/hook_syscalls.c
+cmd_/home/nhutnam/Desktop/modules/hook/hook_syscalls.o := gcc -Wp,-MD,/home/nhutnam/Desktop/modules/hook/.hook_syscalls.o.d  -nostdinc -isystem /usr/lib/gcc/i686-linux-gnu/4.8/include  -I/usr/src/linux-headers-3.13.0-170-generic/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/usr/src/linux-headers-3.13.0-170-generic/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/usr/src/linux-headers-3.13.0-170-generic/include/uapi -Iinclude/generated/uapi -include /usr/src/linux-headers-3.13.0-170-generic/include/linux/kconfig.h -Iubuntu/include  -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -std=gnu89 -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mindirect-branch=thunk-extern -mindirect-branch-register -DRETPOLINE -Wframe-larger-than=1024 -fstack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO -std=gnu99  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(hook_syscalls)"  -D"KBUILD_MODNAME=KBUILD_STR(hook)" -c -o /home/nhutnam/Desktop/modules/hook/.tmp_hook_syscalls.o /home/nhutnam/Desktop/modules/hook/hook_syscalls.c
 
-source_/home/nhutnam/Desktop/hook/hook_syscalls.o := /home/nhutnam/Desktop/hook/hook_syscalls.c
+source_/home/nhutnam/Desktop/modules/hook/hook_syscalls.o := /home/nhutnam/Desktop/modules/hook/hook_syscalls.c
 
-deps_/home/nhutnam/Desktop/hook/hook_syscalls.o := \
+deps_/home/nhutnam/Desktop/modules/hook/hook_syscalls.o := \
   include/linux/init.h \
     $(wildcard include/config/broken/rodata.h) \
     $(wildcard include/config/modules.h) \
@@ -860,19 +860,9 @@ deps_/home/nhutnam/Desktop/hook/hook_syscalls.o := \
   include/uapi/linux/irqnr.h \
   /usr/src/linux-headers-3.13.0-170-generic/arch/x86/include/asm/irq.h \
   /usr/src/linux-headers-3.13.0-170-generic/arch/x86/include/asm/tlbflush.h \
-  include/linux/slab.h \
-    $(wildcard include/config/slab/debug.h) \
-    $(wildcard include/config/failslab.h) \
-    $(wildcard include/config/slob.h) \
-    $(wildcard include/config/slab.h) \
-    $(wildcard include/config/slub.h) \
-    $(wildcard include/config/debug/slab.h) \
-  include/linux/kmemleak.h \
-    $(wildcard include/config/debug/kmemleak.h) \
-  include/linux/slub_def.h \
-    $(wildcard include/config/slub/stats.h) \
-    $(wildcard include/config/memcg/kmem.h) \
+  include/linux/fdtable.h \
+  include/linux/nospec.h \
 
-/home/nhutnam/Desktop/hook/hook_syscalls.o: $(deps_/home/nhutnam/Desktop/hook/hook_syscalls.o)
+/home/nhutnam/Desktop/modules/hook/hook_syscalls.o: $(deps_/home/nhutnam/Desktop/modules/hook/hook_syscalls.o)
 
-$(deps_/home/nhutnam/Desktop/hook/hook_syscalls.o):
+$(deps_/home/nhutnam/Desktop/modules/hook/hook_syscalls.o):
